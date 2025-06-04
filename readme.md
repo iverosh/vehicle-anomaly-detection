@@ -21,30 +21,6 @@
    macro avg     0.9929    0.9883    0.9906     11998
 weighted avg     0.9953    0.9953    0.9953     11998
 ```
-## Требования
-
-- Python 3.8+
-- Менеджер пакетов pip
-
-## Установка
-
-1. Клонируйте репозиторий:
-```bash
-git clone https://github.com/yourusername/vehicle-anomaly-detection.git
-cd vehicle-anomaly-detection
-```
-
-2. Создайте и активируйте виртуальное окружение (рекомендуется):
-```bash
-python -m venv venv
-source venv/bin/activate  # Для Windows используйте `venv\Scripts\activate`
-```
-
-3. Установите зависимости:
-```bash
-pip install -r requirements.txt
-```
-
 ## Использование
 
 ### 1. Генерация тестового набора данных
