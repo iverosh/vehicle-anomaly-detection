@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Анализатор телеметрии</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { display: flex; gap: 20px; }
+        .form-box { 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+            width: 45%;
+        }
+        h1 { text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        input, select { width: 100%; padding: 8px; }
+        button { 
+            background: #4CAF50; 
+            color: white; 
+            border: none; 
+            padding: 10px 15px; 
+            cursor: pointer; 
+        }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>Анализатор телеметрии транспортного средства</h1>
+    
+    <div class="container">
+        <div class="form-box">
+            <h2>Генерация тестовых данных</h2>
+            <form action="/generate" method="POST">
+                <div class="form-group">
+                    <label>Длительность записи (мин):</label>
+                    <input type="number" name="total_time" value="60" min="60" required>
+                </div>
+                <div class="form-group">
+                    <label>Частота аномалий (каждые N мин):</label>
+                    <input type="number" name="anomaly_freq" value="200" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label>Длительность аномалий (сек):</label>
+                    <input type="number" name="anomaly_duration" value="60" min="1" required>
+                </div>
+                <button type="submit">Сгенерировать данные</button>
+            </form>
+        </div>
+
+        <div class="form-box">
+            <h2>Детектирование аномалий</h2>
+            <form action="/detect" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Выберите CSV файл:</label>
+                    <input type="file" name="file" accept=".csv" required>
+                </div>
+                <div class="form-group">
+                    <label>Тип аномалии:</label>
+                    <select name="anomaly_type">
+                        <option value="wheel_slip">Проскальзывание колеса</option>
+                        <option value="gps_loss">Потеря GPS сигнала</option>
+                    </select>
+                </div>
+                <button type="submit">Найти аномалии</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
