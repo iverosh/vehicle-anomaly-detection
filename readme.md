@@ -11,7 +11,7 @@
 
 
 ## TEST METRICS на датасете из demo_data:
-
+```
               precision    recall  f1-score   support
 
     gps_loss     0.9832    0.9688    0.9759      1089
@@ -20,7 +20,7 @@
     accuracy                         0.9953     11998
    macro avg     0.9929    0.9883    0.9906     11998
 weighted avg     0.9953    0.9953    0.9953     11998
-
+```
 ## Требования
 
 - Python 3.8+
@@ -96,7 +96,7 @@ python anomaly_detector.py --dataset путь/к/файлу.csv --anomaly wheel_
 python app.py
 ```
 Внутри него можно сделать генерацию данных и детектировать аномалии
-![Скрин главной страницы](flask-photo.png)
+![Скрин главной страницы](flask-photo.jpg)
 ## Структура проекта
 
 ```
